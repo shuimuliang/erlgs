@@ -32,3 +32,10 @@ check:
 	 @$(REBAR) skip_deps=true xref
 doc:
 	 @$(REBAR) doc
+
+update01: generate
+	 mv rel/erlgs rel/erlgs01
+update02: generate
+	 @$(REBAR) generate-appups previous_release=erlgs01
+	 @$(REBAR) generate-upgrade previous_release=erlgs01
+	 mv rel/erlgs_2.tar.gz rel/erlgs01/releases/

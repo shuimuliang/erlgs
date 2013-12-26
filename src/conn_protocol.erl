@@ -93,9 +93,10 @@ code_change(_OldVsn, State, _Extra) ->
 
 ping(#pingsend{msg=_Msg}, State) ->
     SendMsg = #pingrecv{msg = <<"pong">>},
+    io:format("v1~n"),
     {SendMsg, State}.
 
-pve_roundbegin(#pveroundbeginsend{level=Level}, State) ->
+pve_roundbegin(#pveroundbeginsend{level=_Level}, State) ->
     SendMsg = #pveroundbeginrecv{status=1},
     {SendMsg, State}.
 
