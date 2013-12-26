@@ -1,0 +1,22 @@
+package Pub;
+
+// 整个消息
+message ABSMessage {
+	enum Type {
+		PING_SEND = 1;
+
+        PING_RECV = 2;
+
+        /* pve proto action type */
+        PVE_ROUNDBEGIN_SEND = 3001;
+        PVE_ROUNDEND_SEND = 3002;
+        PVE_PLAYER_ATTACK = 3003;
+        PVE_PLAYER_ATTACKED = 3004;
+
+        PVE_ROUNDBEGIN_RECV = 3201;
+        PVE_ROUNDEND_RECV = 3202;
+	}
+
+	required Type action = 1; 	       // 消息头
+	required bytes msg = 2;            // 消息体
+}

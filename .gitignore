@@ -3,4 +3,16 @@ deps
 *.o
 *.beam
 *.plt
+*.swp
 erl_crash.dump
+*/.DS_Store
+.DS_Store
+
+doc/
+ebin/
+deps/
+.eunit/
+include/*_pb.hrl
+bak/
+rel/erlgs
+cttest/logs

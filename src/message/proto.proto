@@ -1,0 +1,38 @@
+import "pub.proto";
+
+package Proto;
+
+message PingSend {
+        optional string msg = 1;
+}
+
+message PingRecv {
+        optional string msg = 1;
+}
+
+message Level {
+    required int64 id = 1;
+}
+
+/* pve message begin */
+message PVERoundBeginSend {
+    required Level level = 1;
+}
+
+message PVERoundBeginRecv {
+    required int32 status = 1;
+}
+
+message PVERoundEndSend {
+}
+
+message PVERoundEndRecv {
+}
+
+message PVEPlayerAttack {
+}
+
+message PVEPlayerAttacked {
+}
+
+/* pve message end */
